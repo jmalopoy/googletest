@@ -470,8 +470,8 @@ GTEST_API_ AssertionResult IsHRESULTFailure(const char* expr,
 #endif  // GTEST_OS_WINDOWS
 
 // Types of SetUpTestSuite() and TearDownTestSuite() functions.
-using SetUpTestSuiteFunc = void (*)();
-using TearDownTestSuiteFunc = void (*)();
+using SetUpTestSuiteFunc = std::function<void ()>;
+using TearDownTestSuiteFunc = std::function<void ()>;
 
 struct CodeLocation {
   CodeLocation(std::string a_file, int a_line)

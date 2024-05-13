@@ -791,7 +791,7 @@ class GTEST_API_ TestSuite {
   // for catching exceptions thrown from SetUpTestSuite().
   void RunSetUpTestSuite() {
     if (set_up_tc_ != nullptr) {
-      (*set_up_tc_)();
+      set_up_tc_();
     }
   }
 
@@ -799,7 +799,7 @@ class GTEST_API_ TestSuite {
   // needed for catching exceptions thrown from TearDownTestSuite().
   void RunTearDownTestSuite() {
     if (tear_down_tc_ != nullptr) {
-      (*tear_down_tc_)();
+      tear_down_tc_();
     }
   }
 
